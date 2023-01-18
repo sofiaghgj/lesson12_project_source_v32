@@ -3,7 +3,7 @@ import logging
 
 def read_file():
     try:
-        with open('posts.json1', encoding='utf-8') as f:
+        with open('posts.json', encoding='utf-8') as f:
             text = json.load(f)
         return text
     except:
@@ -14,6 +14,7 @@ def read_file():
 def search(s):
     post = []
     for i in read_file():
+        print(i)
         if s.lower() in i["content"].lower():
             post.append(i)
     print(post)
